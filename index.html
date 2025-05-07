@@ -134,6 +134,67 @@
         border-radius: 10px;
         z-index: 1000;
       }
+
+      /* Адаптивные стили для экранов менее 768px (планшеты, мобильные телефоны) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #start-screen {
+    padding: 20px 30px;
+    width: 90%;
+  }
+
+  #start-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  .controls {
+    padding: 10px;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+  }
+
+  #constellation-cards {
+    max-height: 70vh;
+  }
+
+  #planet-info {
+    font-size: 12px;
+    max-width: 200px;
+  }
+
+  #lessonBox {
+    width: 280px;
+    padding: 15px;
+  }
+}
+
+/* Адаптивные стили для экранов менее 480px (мобильные телефоны) */
+@media (max-width: 480px) {
+  #start-screen {
+    padding: 15px;
+    width: 100%;
+  }
+
+  #start-btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .controls {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  #lessonBox {
+    width: 250px;
+    padding: 10px;
+  }
+}
     </style>
   </head>
   <body>

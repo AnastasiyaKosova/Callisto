@@ -579,12 +579,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (c === hoveredConstellation) {
         const cx = proj.reduce((a, b) => a + b.x, 0) / proj.length;
         const cy = proj.reduce((a, b) => a + b.y, 0) / proj.length;
-        ctx.fillStyle = "red";
-        ctx.font = "10px Arial";
-        ctx.fillText(c.name, cx + 10, cy + 10);
-        ctx.font = "12px Arial";
-        ctx.fillStyle = "white";
-        ctx.fillText(c.info, cx + 10, cy + 30);
+
+
       }
     });
 

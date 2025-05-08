@@ -92,9 +92,11 @@
         top: 0;
         left: 0;
         z-index: 1;
+        width: 100vw;
+        height: 100vh;
       }
       .lesson-btn {
-        position: absolute;
+
         left: 10px;
         z-index: 1000;
         padding: 12px 25px;
@@ -134,67 +136,121 @@
         border-radius: 10px;
         z-index: 1000;
       }
+      @media (max-width: 600px) {
+        /* Обновления для мобильных устройств */
+        #start-screen {
+          width: 90%;
+          padding: 20px;
+        }
 
-      /* Адаптивные стили для экранов менее 768px (планшеты, мобильные телефоны) */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
+        #start-screen h1 {
+          font-size: 1.8em;
+          margin-bottom: 15px;
+        }
 
-  #start-screen {
-    padding: 20px 30px;
-    width: 90%;
-  }
+        #start-btn {
+          padding: 10px 25px;
+          font-size: 1em;
+        }
 
-  #start-btn {
-    padding: 12px 25px;
-    font-size: 1em;
-  }
+        .lesson-btn {
+          padding: 10px 20px;
+          font-size: 0.8em;
+          margin-bottom: 10px;
+        }
 
-  .controls {
-    padding: 10px;
-    bottom: 10px;
-    right: 10px;
-    font-size: 12px;
-  }
+        .controls {
+          bottom: 10px;
+          right: 10px;
+          font-size: 0.8em;
+          padding: 10px;
+        }
 
-  #constellation-cards {
-    max-height: 70vh;
-  }
+        #constellation-cards {
+          #constellation-cards {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            max-height: 40vh;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 0.8em;
+            overflow-y: auto;
+            z-index: 10000;
+            display: none;
+            transition: opacity 0.3s ease;
+          }
+        }
 
-  #planet-info {
-    font-size: 12px;
-    max-width: 200px;
-  }
+        #planet-info {
+          max-width: 180px;
+          font-size: 0.9em;
+        }
 
-  #lessonBox {
-    width: 280px;
-    padding: 15px;
-  }
-}
+        #showStarsLessonBtn,
+        #showGalaxiesLessonBtn,
+        #showHistoryLessonBtn,
+        #showExplorationLessonBtn {
+          padding: 8px 15px;
+          font-size: 0.8em;
+        }
 
-/* Адаптивные стили для экранов менее 480px (мобильные телефоны) */
-@media (max-width: 480px) {
-  #start-screen {
-    padding: 15px;
-    width: 100%;
-  }
+        #lessonBox {
+          width: 80%;
+          max-width: 100%;
+          font-size: 0.85em;
+          padding: 15px;
+        }
 
-  #start-btn {
-    padding: 10px 20px;
-    font-size: 0.9em;
-  }
+        canvas {
+          top: 0;
+          left: 0;
+          z-index: 0;
+        }
+      }
 
-  .controls {
-    font-size: 10px;
-    padding: 8px;
-  }
+      @media (max-width: 1024px) {
+        /* Под планшеты */
+        #start-screen {
+          width: 85%;
+          padding: 30px;
+        }
 
-  #lessonBox {
-    width: 250px;
-    padding: 10px;
-  }
-}
+        #start-screen h1 {
+          font-size: 2.2em;
+          margin-bottom: 20px;
+        }
+
+        #start-btn {
+          padding: 12px 30px;
+          font-size: 1.1em;
+        }
+
+        .lesson-btn {
+          padding: 12px 25px;
+          font-size: 0.9em;
+        }
+
+        .controls {
+          font-size: 1em;
+          padding: 12px;
+        }
+
+        #planet-info {
+          max-width: 220px;
+          font-size: 1em;
+        }
+
+        #lessonBox {
+          width: 90%;
+          max-width: 100%;
+          font-size: 1em;
+          padding: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -248,31 +304,36 @@
       <h3 id="planet-name" style="margin: 5px 0 2px"></h3>
       <p id="planet-desc" style="font-size: 14px"></p>
     </div>
+    <div style="position: absolute; top:10px; z-index: 1000;">
     <button
-      id="showStarsLessonBtn" class="lesson-btn"
-      style="position: absolute; top: 10px; left: 10px; z-index: 1000"
+      id="showStarsLessonBtn"
+      class="lesson-btn"
+      style=" z-index: 1000"
     >
       Звёзды
     </button>
     <button
-      id="showGalaxiesLessonBtn" class="lesson-btn"
-      style="position: absolute; top: 60px; left: 10px; z-index: 1000"
+      id="showGalaxiesLessonBtn"
+      class="lesson-btn"
+      style="  z-index: 1000"
     >
       Галактики
     </button>
     <button
-      id="showHistoryLessonBtn" class="lesson-btn"
-      style="position: absolute; top: 110px; left: 10px; z-index: 1000"
+      id="showHistoryLessonBtn"
+      class="lesson-btn"
+      style="  z-index: 1000"
     >
       История астрономии
     </button>
     <button
-      id="showExplorationLessonBtn" class="lesson-btn"
-      style="position: absolute; top: 160px; left: 10px; z-index: 1000"
+      id="showExplorationLessonBtn"
+      class="lesson-btn"
+      style="  z-index: 1000"
     >
       Космические исследования
     </button>
-
+  </div>
     <div
       id="lessonBox"
       style="
@@ -285,7 +346,7 @@
         padding: 20px;
         border-radius: 10px;
         width: 320px;
-        z-index: 100;
+        z-index: 1001;
       "
     >
       <h2 id="lessonTitle"></h2>
@@ -321,7 +382,7 @@
 
     <audio id="background-music" loop autoplay>
       <source
-        src="assets/music/interstellar_08. Mountains.mp3"
+        src="assets/musicрр/interstellar_08. Mountains.mp3"
         type="audio/mp3"
       />
       Ваш браузер не поддерживает элемент audio.
